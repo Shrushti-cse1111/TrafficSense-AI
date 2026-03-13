@@ -39,10 +39,6 @@ graph TD
 - **Traffic Forecast Timeline**: 12-hour futuristic outlook on city speed trends.
 - **Interactive Analytics**: Hourly trend charts and historical speed distribution.
 
-## 🖼️ Screenshots / Demo GIF
-*(Add your project screenshots here to wow your recruiters!)*
-- **Smart Routes Page**: `web/src/assets/demo_route.png`
-- **Analytics Dashboard**: `web/src/assets/demo_analytics.png`
 
 ## ⚙️ Installation Steps
 1. **Clone the Project**:
