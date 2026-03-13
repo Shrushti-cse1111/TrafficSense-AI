@@ -1,0 +1,1 @@
+latitude,longitude,severity,speed_kmh,event_type_ACCIDENT,event_type_JAM,event_type_ROAD_CLOSED,event_type_WEATHERHAZARD
