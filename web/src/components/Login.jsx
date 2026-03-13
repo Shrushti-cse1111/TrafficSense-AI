@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
+import API_BASE from '../config';
 import './Auth.css';
 
 const Login = () => {
@@ -12,19 +13,15 @@ const Login = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
         setError('');
-        console.log('Login attempt for:', username);
         try {
-            const response = await axios.post('http://127.0.0.1:5000/auth/login', { username, password });
-            console.log('Login success response:', response.data);
+            const response = await axios.post(`${API_BASE}/auth/login`, { username, password });
             if (response.data.token) {
                 localStorage.setItem('token', response.data.token);
-                console.log('Token stored, navigating to /');
                 navigate('/');
             } else {
                 setError('No token received from server');
             }
         } catch (err) {
-            console.error('Login error:', err);
             setError(err.response?.data?.message || 'Login failed. Please check your credentials or if the server is running.');
         }
     };

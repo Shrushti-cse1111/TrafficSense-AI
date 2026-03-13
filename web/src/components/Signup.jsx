@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
+import API_BASE from '../config';
 import './Auth.css';
 
 const Signup = () => {
@@ -12,13 +13,10 @@ const Signup = () => {
     const handleSignup = async (e) => {
         e.preventDefault();
         setError('');
-        console.log('Signup attempt for:', username);
         try {
-            await axios.post('http://127.0.0.1:5000/auth/signup', { username, password });
-            console.log('Signup success, navigating to /login');
+            await axios.post(`${API_BASE}/auth/signup`, { username, password });
             navigate('/login');
         } catch (err) {
-            console.error('Signup error:', err);
             setError(err.response?.data?.message || 'Signup failed. Please try a different username or check the server status.');
         }
     };

@@ -17,7 +17,6 @@ const MapPage = ({ prediction, heatmapData, showHeatmap, onToggleHeatmap, onLoca
         const found = locations.find(loc => loc.name.toLowerCase() === q);
         
         if (found) {
-            console.log(`Searching for ${searchQuery} at ${found.lat}, ${found.lon}`);
             onLocationSelect(found.lat, found.lon);
             setIs3DMode(true);
             setMapMode('satellite');

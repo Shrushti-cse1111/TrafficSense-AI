@@ -7,9 +7,8 @@ import AnalyticsPage from './pages/AnalyticsPage';
 import RoutesPage from './pages/RoutesPage';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import API_BASE from './config';
 import './Dashboard.css';
-
-const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000';
 
 const ProtectedRoute = ({ children }) => {
   const token = localStorage.getItem('token');
